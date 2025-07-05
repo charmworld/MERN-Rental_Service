@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Cars from './pages/Cars';
 import Navbar from './components/Navbar';
 import Bookings from './pages/Bookings';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -24,6 +25,8 @@ const App = () => {
         <Route path='/cars' element={<Cars/>}/>
         <Route path='/bookings' element={<Bookings/>}/>
       </Routes>
+
+      {!isOwnerPath && <Footer />}
     </>
   )
 }
