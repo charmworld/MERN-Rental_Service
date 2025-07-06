@@ -16,7 +16,7 @@ const CarCard = ({car}) => {
     className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1
     transition-all duration-500 cursor-pointer'>
 
-        <div className='realtive h-58 overflow-hidden'>
+        <div className='relative h-58 overflow-hidden'>
             <img src={car.image} alt="Cat Image" className='w-full h-full object-cover
             transition-transform duration-500 group-hover:scale-105'/>
 
@@ -36,7 +36,7 @@ const CarCard = ({car}) => {
 
           <div>
         <h3 className='text-lg font-medium'>{car.brand} {car.model}</h3>
-         <p className='text-mated-foreground text-sm'>{car.category}. {car.year}</p>
+         <p className='text-muted-foreground text-sm'>{car.category}. {car.year}</p>
 
           </div>
 
@@ -55,7 +55,7 @@ const CarCard = ({car}) => {
                 </div>
                 <div className='flex items-center text-sm text-muted-foreground'>
                   <img src={assets.car_icon} alt="" className='h-4 mr-2'/>
-                      <span>{car.transmission} Seats</span>
+                      <span>{car.transmission}</span>
 
                 </div>
             
