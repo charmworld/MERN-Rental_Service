@@ -11,28 +11,40 @@ const Hero = () => {
         
         <form className='flex flex-col md:flex-row items-start md:items-center
         justify-between p-6 rounded-lg md:rounded-full w-full max-w-2xl md:mask-x-to-yellow-200
-        bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.1)]'>
+        bg-white border border-black shadow-[0px_8px_20px_rgba(0,0,0,0.1)]'>
 
             <div className='flex flex-col md:flex-row items-start md:items-center
             gap-10 min-md:ml-8'>
             <div>
-            <select required value={pickupLocation} 
+            <select 
+            id="pickup-location"
+            name="pickupLocation"
+            required 
+            value={pickupLocation}
+
             onChange={(e)=> setPickupLocation(e.target.value)}>
                 <option value="">Pickup Location</option>
                 {cityList.map((city)=> <option key={city} value={city}>{city} </option>)}
             </select>
-            <p className='px-1 text-sm text-gray-500'>{pickupLocation ? pickupLocation : 'please select location'} </p>
+            <p className='px-1 text-sm text-gray-500'>
+              {pickupLocation ? pickupLocation : 'select location'} </p>
             
             </div>
             <div className='flex flex-col items-start gap-2'>
              <label htmlFor='pickup-date'>Pick up date</label>
-             <input type="date" id="pickup-date" min={new Date().toISOString().
+             <input type="date" 
+             id="pickup-date" 
+             name="pickupDate"
+             min={new Date().toISOString().
               split('T')[0]} className='text-sm text-gray-500' required/>
              
             </div>
             <div className='flex flex-col items-start gap-2'>
              <label htmlFor='return-date'>Return date</label>
-             <input type="date" id="return-date" min={new Date().toISOString().
+             <input type="date" 
+             id="return-date"
+             name="returnDate"
+              min={new Date().toISOString().
               split('T')[0]} className='text-sm text-gray-500' required/>
              
             </div>
