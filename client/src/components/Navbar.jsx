@@ -1,12 +1,34 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { assets, menuLinks } from '../assets/assets';
+import { useAppContext } from '../context/AppContext';
+import { toast } from 'react-hot-toast';
 
-const Navbar = ({ setShowLogin }) => {
+
+const Navbar = () => {
+ 
+  const { setShowLogin, user, logout, isOwner, axios, setIsOwner } = useAppContext();
+
+
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+
+  const changeRole = async ()=>{
+    try {
+      const {data} = await axios.post('/api/owner/change-role')
+      if (data.success) {
+        setIsOwner(true)
+        toast.success(data.message)
+      }else{
+        toast.error(data.message)
+      }
+       
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
 
   return (
     <div className="bg-gradient-to-r from-[#A9CCFF] to-[#4EC906] w-full">
@@ -56,22 +78,24 @@ const Navbar = ({ setShowLogin }) => {
           {/* Buttons */}
           <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
             <button
-              onClick={() => {
-                setOpen(false);
-                navigate('/owner');
-              }}
+              onClick={() => isOwner ? navigate('/owner') : changeRole()}
+          
               className="cursor-pointer"
             >
-              Dashboard
+              {isOwner ? 'Dashboard' : 'List cars' }
             </button>
             <button
               onClick={() => {
-                setShowLogin(true);
-                setOpen(false);
-              }}
+                if (user) {
+                   logout();
+                    } else {
+                     setShowLogin(true);
+                     setOpen(false);
+                    }
+                  }}
               className="cursor-pointer px-8 py-2 bg-primary hover:bg-black transition-all text-white rounded-lg"
             >
-              Login
+             {user ? 'Logout' : 'Login'}
             </button>
           </div>
         </div>
