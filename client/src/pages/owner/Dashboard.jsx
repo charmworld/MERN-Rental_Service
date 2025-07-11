@@ -46,7 +46,7 @@ const Dashboard = () => {
         fetchDashboardData()
     },[isOwner])
 
-
+    
   return (
     <div className='px-4 pt-10 md:px-10 flex-1'>
         <Title title="Admin Dashboard" subTitle="Analyze key business metrics

@@ -4,13 +4,17 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import  AppProvider  from './context/AppContext.jsx'
+import { MotionConfig } from 'framer-motion' // ✅ Correct
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
     <BrowserRouter>
     <AppProvider>
-      <App />
+      <MotionConfig viewport={{once: true}}>
+        <App />
+      </MotionConfig>
     </AppProvider>
     </BrowserRouter>
   

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { assets, menuLinks } from '../assets/assets';
 import { useAppContext } from '../context/AppContext';
 import { toast } from 'react-hot-toast';
+import { motion } from 'framer-motion';
 
 
 const Navbar = () => {
@@ -31,14 +32,19 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-gradient-to-r from-[#A9CCFF] to-[#4EC906] w-full">
+    <motion.div
+    initial={{y: -20, opacity: 0}}
+    animate={{y: 0, opacity: 1}}
+    transition={{duration: 0.5}}
+    
+    className="bg-gradient-to-r from-[#A9CCFF] to-[#4EC906] w-full">
       <div
         className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 
         text-gray-600 border-b border-borderColor relative transition-all`}
       >
         {/* Logo */}
         <Link to="/">
-          <img src={assets.mylogoo} alt="logo" className="h-6" />
+          <motion.img whileHover={{scale: 1.05}} src={assets.mylogoo} alt="logo" className="h-6" />
         </Link>
 
         {/* Navigation Links */}
@@ -109,7 +115,7 @@ const Navbar = () => {
           <img src={open ? assets.close_icon : assets.menu_icon} alt="menu" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
