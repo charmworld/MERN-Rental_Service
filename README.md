@@ -22,13 +22,17 @@ A full-stack car rental application built with the MERN stack (MongoDB, Express,
 
 
 🛠️ Tech Stack
+
 Frontend: React, Tailwind CSS
 
 Backend: Node.js, Express.js, MongoDB + Mongoose
+
 Multer (image upload)
+
 ImageKit (cloud storage)
 
 Others:
+
 JWT for authentication
 
 
