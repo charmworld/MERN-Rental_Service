@@ -1,38 +1,36 @@
+# 🏠 MERN Rental Service
 
-🏠 MERN Rental Service
+A full-stack **car rental application** built using the **MERN stack** (MongoDB, Express.js, React.js, Node.js). This platform enables users to browse, book, and list rental vehicles, complete with image uploads and an admin dashboard.
 
-A full-stack car rental application built with the MERN stack (MongoDB, Express, React, Node.js). This platform allows users to rent vehicles, manage bookings, and upload car listings with images.
+---
 
-🚀 Features :
+## 🚀 Features
 
-🔐 User Authentication (login)
+- 🔐 **User Authentication** (Login using JWT)
+- 🚗 **Browse and Book Cars**
+- 🧾 **Manage Bookings**
+- 📸 **Upload Vehicle Images**
+- 👤 **Owner/Admin Panel**
+- ⚙️ **RESTful API Integration**
+- 🌐 **Responsive UI** using React and Tailwind CSS
 
-🚗 Browse and Book Cars
+---
 
-🧾 Manage Bookings
+## 🛠️ Tech Stack
 
-📸 Upload Vehicle Images
+### 🧩 Frontend
+- React.js
+- Tailwind CSS
 
-👤 Owner/Admin Panel
+### 🖥️ Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
 
-⚙️ RESTful API integration
+### 🗂️ File & Image Handling
+- Multer (image upload)
+- ImageKit (cloud storage for vehicle images)
 
-🌐 Responsive Frontend with React + Tailwind CSS
-
-
-
-🛠️ Tech Stack
-
-Frontend: React, Tailwind CSS
-
-Backend: Node.js, Express.js, MongoDB + Mongoose
-
-Multer (image upload)
-
-ImageKit (cloud storage)
-
-Others:
-
-JWT for authentication
-
+### 🔐 Authentication & Security
+- JSON Web Tokens (JWT)
 
